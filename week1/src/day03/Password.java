@@ -11,10 +11,10 @@ public class Password {
 		int chance = 5;
 		Scanner sc = new Scanner(System.in);
 		do {
-			System.out.println("비밀번호를 입력하세요: ");
+			System.out.print("비밀번호를 입력하세요: ");
 			pw2 = sc.nextInt();
 			if (pw == pw2) {
-				System.out.println("정답입니다.");
+				System.out.println("들어오세요.");
 				break;
 			}
 			else {
@@ -24,7 +24,7 @@ public class Password {
 					System.out.println("경찰서로 가세요.");
 					break;
 				}
-				System.out.printf("기회가 %d번 남았습니다.", chance);
+				System.out.printf("기회가 %d번 남았습니다.\n", chance);
 			}
 				
 				
