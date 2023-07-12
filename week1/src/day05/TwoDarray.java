@@ -13,7 +13,7 @@ public class TwoDarray {
 		
 		for (int i = 0; i < 3;i++) {//i는 사람
 			for (int j = 0; j < 3; j++) {//j는 과목별 점수
-				System.out.print(sname[i]+"점수 입력: ");
+				System.out.print(sname[j]+"점수 입력: ");
 				score[i][j] = sc.nextInt();
 				score[i][3]+=score[i][j];//점수의 총 합을 구할 수 있도록 함.
 			} 
