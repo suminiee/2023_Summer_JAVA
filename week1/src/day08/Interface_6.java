@@ -66,7 +66,7 @@ class Marine extends WarInfo implements Flyable{
 		w.hp = (int)1.5*w.hp;
 	}
 	public void move(int x, int y) {
-		System.out.printf("좌표(%d, %d)으로 이동합니다.\n", w.x,w.y);
+		System.out.printf("좌표(%d, %d)으로 이동합니다.\n", x,y);
 	}
 	public void fly() {
 		System.out.println("잠시 날라요");
@@ -89,7 +89,7 @@ class Tank extends WarInfo implements Flyable{
 		System.out.println("마구마구 쏩니다.");
 	}
 	public void move(int x, int y) {
-		System.out.printf("좌표(%d, %d)으로 이동합니다.\n", ww.x,ww.y);
+		System.out.printf("좌표(%d, %d)으로 이동합니다.\n",x,y);
 	}
 	public void fly() {
 		System.out.println("무거워서 가장 느리게 날라가지요");
@@ -107,7 +107,7 @@ class Transport extends WarInfo implements Flyable{
 	}
 	WarInfo www = new WarInfo(x, y, hp, speed);
 	public void move(int x, int y) {
-		System.out.printf("좌표(%d, %d)으로 이동합니다.\n", www.x,www.y);
+		System.out.printf("좌표(%d, %d)으로 이동합니다.\n", x,y);
 	}
 	public void fly() {
 		System.out.println("가장 빨리 움직여요.");
@@ -115,8 +115,10 @@ class Transport extends WarInfo implements Flyable{
 }
 
 class AllMove{//전화기
-	void moving(Flyable ff, int x, int y) {
-		ff.move(x, y);
+	void moving(Flyable ff[]) {
+		for (int i = 0; i < ff.length; i++) {
+			// 여기를 채워야함..
+		}
 	}
 	
 
@@ -126,8 +128,18 @@ class AllMove{//전화기
 public class Interface_6 {
 
 	public static void main(String[] args) {
-		AllMove t = new AllMove();
 		
+//		Marine m = new Marine(1,2,500,10);
+//		Tank t = new Tank(1,2,1000,50);
+//		Transport tp = new Transport(1,2,5000,200);
 		
+		Flyable[] unit = new Flyable[10];
+		
+		unit[0] = new Marine(1,2,500,10);
+		unit[1] = new Tank(1,2,1000,50);
+		unit[2] = new Transport(1,2,5000,200);
+		
+		AllMove am = new AllMove();
+		am.moving(unit);
 	}
 }
