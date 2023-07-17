@@ -1,0 +1,30 @@
+<멤버클래스>
+-인스턴스 멤버 클래스(inner class)
+	class A{
+		class b{
+
+		}
+	}
+	
+	-> A생성 후 B 생성
+
+
+-정적 멤버 클래스(Nested class)
+	class A{
+		static class b{
+
+		}
+	}
+	
+	-> A와 상관없이 B 생성.
+
+-로컬 클래스 
+	class A{
+		void method{
+			class B{
+			}
+		}
+	}
+
+	=> 메소드 호출 시 생성.
+	
