@@ -1,23 +1,25 @@
 package day10;
 
-class Address implements Cloneable{
+class Address implements Cloneable{//Cloneable이라는 interface를 implements해줌.
 	String add;
 	int zip;
-	public Address(String add, int zip) {
+	public Address(String add, int zip) {//생성자 만들어주기.
 		super();
 		this.add = add;
 		this.zip = zip;
 	}
+//	address를 담아두는 공간도 분리해주기 위해서(아니면 값이 복사됨) address에도 clone을 만들어줌.
 	@Override
 	protected Address clone() throws CloneNotSupportedException {
 		return (Address)super.clone();
 	}
+//	마우스 우클릭 -> source -> override/implement method 클릭 후
+//	return앞에 (Address)를 적어서 casting해주기
+	
 	@Override
 	public String toString() {
 		return "Address [add=" + add + ", zip=" + zip + "]";
 	}
-	
-	
 }
 class Person implements Cloneable{ //속이 빈 marker interface
 	int age;
@@ -38,7 +40,7 @@ class Person implements Cloneable{ //속이 빈 marker interface
 			p.ad = ad.clone();//복사를 한게 같은 주소값을 한 add.ad를 가리키고 있는데 이 ad를 또 복사해서 클론으로 만든 후 그 새 복사본을 가리키게 한다는 의미
 			return p; //이렇게 되면 ad.add가 분리됨. Person(add)가 가리키는 주소값을 다르게 했기 때문.
 			
-//		return (Person)super.clone();//무조건 이 방법으로 호출해야함 //얘를 고쳐야 add.ad를 고쳤을 때 둘 다 복사되는 것을 분리시킬 수 있음
+//		return (Person)super.clone();//무조건 이 방법으로 호출해야함, 근데 얘는 address를 담는 공간은 clone복사되지 않음. //얘를 고쳐야 add.ad를 고쳤을 때 둘 다 복사되는 것을 분리시킬 수 있음
 		
 	}
 

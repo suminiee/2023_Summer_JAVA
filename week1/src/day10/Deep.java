@@ -40,6 +40,7 @@ public class Deep {
 				hrr[i][j] = err[i][j]; //2차원 배열은 객체 생성 후 직접 대입
 		}
 		hrr[0][0] = 333;
+		
 		System.out.println(Arrays.deepToString(err));
 		System.out.println(Arrays.deepToString(frr));
 	}
