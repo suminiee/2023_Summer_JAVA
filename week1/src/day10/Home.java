@@ -12,19 +12,33 @@ class MyDate{
 		this.month = month;
 		this.day = day;
 	}
-	public boolean equals(Object obj) {
-		
-	}
-
+	@Override
 	public int hashCode() {
 		return Objects.hash(day, month, year);
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyDate other = (MyDate) obj;
+		return day == other.day && month == other.month && year == other.year;
+	}
+	
 }
 
 
 
 public class Home {
 	public static void main(String[] args) {
+		MyDate m1 = new MyDate(2002,1,14);
+		MyDate m2 = new MyDate(2000,9,15);
+		MyDate m3 = new MyDate(2002,1,14);
 		
+		System.out.println(m1.equals(m2));
+		System.out.println(m1.equals(m3));
 	}
 }

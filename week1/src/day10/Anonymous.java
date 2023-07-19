@@ -21,7 +21,7 @@ class Bstation{
 				System.out.println("b-station name : "+ bName);
 				System.out.println("channel  number : "+ channel);
 			}
-		};
+		};//<-이 colon은 return의 것과 마찬가지.
 	}
 	
 }
