@@ -13,7 +13,7 @@ import java.util.Scanner;
 //2. cmd창에 telnet ip 10001 (ip는 ipconfig치면 볼 수 있음)
 //3. telnet이 없으면 window key + r누르고 뜬 창에 OptionalFeatures 치고
 //4. 맨 아래로 내려서 텔넷 클라이언트 설치하기.
-
+//5. server, client둘 다 실행시켜보면 (같은 ip공유하면) 채팅가능 
 
 public class TCPClient {
 	public static void main(String[] args) {
